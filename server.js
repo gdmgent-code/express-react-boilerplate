@@ -5,16 +5,18 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors');
+require('dotenv').config();
 
 const settings = require('./server/config/settings');
 const apiRoutes = require('./server/api/api.routes');
 
 // Settings
 const port = process.env.PORT || 5000;
+const mongodb_url = process.env.MONGODB_URL;
 
 // Mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://nmd2017:wickedman@ds125388.mlab.com:25388/gdm_madeby'); 
+mongoose.connect(mongodb_url); 
 
 // Initialize the server
 const app = express();
@@ -27,7 +29,7 @@ app.use('/api', apiRoutes);
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -38,10 +40,10 @@ app.use(function(err, req, res, next) {
 
   res.status(err.status || 500);
   res.send('error');
-});*/
+});
 const server = http.createServer(app);
-server.listen(5000, (error) => {
+server.listen(port, (error) => {
   if (!error) {
-    console.log(`Server is running on port: 5000! Build something amazing!`);
+    console.log(`Server is running on port: ${ port }! Build something amazing!`);
   }
 });
