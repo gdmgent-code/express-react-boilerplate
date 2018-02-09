@@ -1,0 +1,24 @@
+{
+  "name": "nmd-express-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "cuid": "^2.0.2",
+    "express": "^4.16.2",
+    "joi": "^13.1.2",
+    "mongoose": "^5.0.3",
+    "morgan": "^1.9.0",
+    "sanitize-html": "^1.17.0",
+    "slugify": "^1.2.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  },
+  "scripts": {
+    "start": "echo 'Project started in production mode\n' & NODE_ENV=production PORT=8080 MONGO_URL=mongodb://nmd2017:wickedman@ds125388.mlab.com:25388/gdm_madeby node server.js",
+    "start-dev": "echo 'Project started in development mode\n' & NODE_ENV=development PORT=8080 CLIENTPATH=/client/dist/ MONGO_URL=mongodb://nmd2017:wickedman@ds125388.mlab.com:25388/gdm_madeby nodemon --config nodemon.json server.js"
+  }
+}
