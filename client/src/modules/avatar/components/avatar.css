@@ -1,0 +1,17 @@
+.avatar {
+	position: relative;
+}
+.avatar__bit {
+	background: rgba(0, 0, 0, 0.1);
+	display: block;
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	border: 1px solid rgba(0, 0, 0, 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.avatar__bit--active {
+	background: rgba(0, 0, 0, 1);
+}

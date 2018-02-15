@@ -1,6 +1,3 @@
-'use strict';
-
-const mongoose = require('mongoose');
 const Post = require('../models/post.model');
 const cuid = require('cuid');
 const slugify = require('slugify');

@@ -21,13 +21,13 @@ mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-const posts = []
+const posts = [];
 
 function postCreate(title, synopsis, body, cb) {
   const postDetail = {
-    'title': title,
-    'synopsis': synopsis,
-    'body': body
+    title: title,
+    synopsis: synopsis,
+    body: body,
   };
 
   const newPost = new Post(postDetail);
@@ -39,12 +39,12 @@ function postCreate(title, synopsis, body, cb) {
        
   newPost.save(err => {
     if (err) {
-      cb(err, null)
-      return
+      cb(err, null);
+      return;
     }
     console.log('New Post: ' + newPost);
-    posts.push(newPost)
-    cb(null, newPost)
+    posts.push(newPost);
+    cb(null, newPost);
   });
 }
 

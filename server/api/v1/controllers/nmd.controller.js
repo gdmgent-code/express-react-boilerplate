@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Get hello
  * @param req
@@ -7,7 +5,7 @@
  * @returns void
  */
 function getHello(req, res) {
-  res.json({ 'message': 'Welcome to New Media Development!'});
+  res.json({ message: 'Welcome to New Media Development!' });
 }
 module.exports.getHello = getHello;
 
@@ -19,7 +17,10 @@ module.exports.getHello = getHello;
  */
 function getLecturers(req, res) {
   res.json([
-    { 'firstname': 'Philippe', 'lastname': 'De Pauw - Waterschoot' }
+    { firstname: 'Philippe', lastname: 'De Pauw - Waterschoot' },
+    { firstname: 'Dieter', lastname: 'De Weirdt' },
+    { firstname: 'Olivier', lastname: 'Parent' },
+    { firstname: 'Evelien', lastname: 'Rutsaert' },
   ]);
 }
 module.exports.getLecturers = getLecturers;

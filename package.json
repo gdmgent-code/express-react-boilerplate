@@ -16,10 +16,18 @@
     "slugify": "^1.2.9"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-ava": "^4.5.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
     "nodemon": "^1.14.12"
   },
   "scripts": {
     "start": "echo 'Project started in production mode\n' & node server.js",
-    "start-dev": "echo 'Project started in development mode\n' & nodemon --config nodemon.json server.js"
+    "start-dev": "echo 'Project started in development mode\n' & nodemon --config nodemon.json server.js",
+    "lint": "eslint server.js seeddb.js server"
   }
 }
